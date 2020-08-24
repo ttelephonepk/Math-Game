@@ -10,8 +10,15 @@ import java.util.*
 
 
 class GameActivity : AppCompatActivity() {
+    companion object {
+        const val LEVEL_COUNT=10
+        const val RIGHT_ANSWERS_COUNT="rightAnswersCount"
+    }
     private val random= Random()
     private var res:Int=0
+    private var currentLevelCount=1
+    private var rightAnswers=0
+    private var wrongAnswers=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -21,12 +28,17 @@ class GameActivity : AppCompatActivity() {
     fun onClick(view:View){
         val SelectedVariant=(view as Button).text.toString().toInt()
         if (SelectedVariant==res){
-            generateQuestion()
+            rightAnswers++
+        } else {
+            wrongAnswers++
         }
-        else {
+        if (currentLevelCount== LEVEL_COUNT){
             val intent=Intent(this,GameOverActivity::class.java)
+            intent.putExtra(RIGHT_ANSWERS_COUNT, rightAnswers)
             startActivity(intent)
             finish()
+        } else {
+            generateQuestion()
         }
     }
     //random esap jaratiw
