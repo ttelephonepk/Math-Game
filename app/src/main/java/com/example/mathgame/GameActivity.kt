@@ -40,6 +40,7 @@ class GameActivity : AppCompatActivity() {
         } else {
             generateQuestion()
         }
+        currentLevelCount++
     }
     //random esap jaratiw
     private fun generateQuestion(){

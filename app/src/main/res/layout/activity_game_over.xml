@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Game Over"
         android:textStyle="bold"
-        android:textSize="58sp"
+        android:textSize="50sp"
         android:textColor="#0048BA"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

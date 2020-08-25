@@ -10,7 +10,7 @@ class GameOverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
         var rightAnswerCount=intent.getIntExtra(GameActivity.RIGHT_ANSWERS_COUNT,0)
-        tvScore.text="$rightAnswerCount / ${GameActivity.LEVEL_COUNT}"
+        tvScore.text="Jámi ${GameActivity.LEVEL_COUNT} soraw\n $rightAnswerCount durıs juwap"
 
         restartbtn.setOnClickListener {
             val intent=Intent(this,MainActivity::class.java)
